@@ -9,13 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            VStack(spacing: 20) {
+                TextField("Username", text: .constant(""), prompt: Text("Username?"))
+                    
+                SecureField("Password", text: .constant(""), prompt: Text("Password"))
+                
+                Button {
+                    
+                } label: {
+                    Text("Login")
+                }
+
+                
+            }
+            .padding()
+            .textFieldStyle(.roundedBorder)
         }
-        .padding()
     }
 }
 
